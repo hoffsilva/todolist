@@ -1,5 +1,5 @@
-    //
-//  ViewController.swift
+//
+//  ItemListViewController.swift
 //  ToDo
 //
 //  Created by Hoff Henry Pereira da Silva on 19/03/20.
@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ItemListViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
