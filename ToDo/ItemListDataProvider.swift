@@ -9,17 +9,23 @@
 import UIKit
 
 class ItemListDataProvider: NSObject {
-
+    var itemManager: ItemManager?
 }
 
 extension ItemListDataProvider: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        section == 0 ? itemManager?.toDoCount ?? 0 : itemManager?.doneCount ?? 0 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
     }
     
 }
+
