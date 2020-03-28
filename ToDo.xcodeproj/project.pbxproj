@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B122A9E242F9227007BDDDE /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B122A9D242F9227007BDDDE /* ItemListDataProvider.swift */; };
 		CA854EDA242384FD00BE3C14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA854ED9242384FD00BE3C14 /* AppDelegate.swift */; };
 		CA854EDC242384FD00BE3C14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA854EDB242384FD00BE3C14 /* SceneDelegate.swift */; };
 		CA854EDE242384FD00BE3C14 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA854EDD242384FD00BE3C14 /* ItemListViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B122A9D242F9227007BDDDE /* ItemListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
 		CA854ED6242384FD00BE3C14 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA854ED9242384FD00BE3C14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA854EDB242384FD00BE3C14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				CA854EE4242384FE00BE3C14 /* LaunchScreen.storyboard */,
 				CA854EE7242384FE00BE3C14 /* Info.plist */,
 				CAA3B4002428028C00AB9A36 /* Model */,
+				0B122A9D242F9227007BDDDE /* ItemListDataProvider.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA854EDE242384FD00BE3C14 /* ItemListViewController.swift in Sources */,
+				0B122A9E242F9227007BDDDE /* ItemListDataProvider.swift in Sources */,
 				CA854EDA242384FD00BE3C14 /* AppDelegate.swift in Sources */,
 				CA854F002423ABAD00BE3C14 /* Location.swift in Sources */,
 				CA854EFE2423A3E600BE3C14 /* ToDoItem.swift in Sources */,

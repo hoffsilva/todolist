@@ -11,11 +11,12 @@ import UIKit
 class ItemListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView?
+    @IBOutlet var dataProvider: (UITableViewDelegate & UITableViewDataSource)!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.tableView?.dataSource = dataProvider
+        self.tableView?.delegate = dataProvider
     }
 
 
