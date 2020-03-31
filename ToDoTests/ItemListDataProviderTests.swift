@@ -69,8 +69,26 @@ class ItemListDataProviderTests: XCTestCase {
     }
     
     func test_CellForRow_CallsConfigCell() {
-        
-        
+        mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "ItemCell")
+        mockTableView.dataSource = sut
+        let item = ToDoItem(title: "Isa")
+        sut.itemManager?.add(item)
+        mockTableView.reloadData()
+        let cell = mockTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! MockItemCell
+        XCTAssertEqual(cell.cactchedItem, item)
+    }
+    
+    func test_CellForRow_Section2_CallsConfigCellWithDoneItem() {
+        mockTableView = MockTableView(frame: CGRect(x: 0, y: 0, width: 320, height: 480), style: .plain)
+        mockTableView.dataSource = sut
+        mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "ItemCell")
+        sut.itemManager?.add(ToDoItem(title: "Foo"))
+        let second = ToDoItem(title: "Bar")
+        sut.itemManager?.add(second)
+        sut.itemManager?.checkItem(at: 1)
+        mockTableView.reloadData()
+        let cell = mockTableView.cellForRow(at: IndexPath(item: 0, section: 1)) as! MockItemCell
+        XCTAssertEqual(cell.cactchedItem, second)
     }
 
 }
@@ -87,10 +105,10 @@ extension ItemListDataProviderTests {
     }
     
     class MockItemCell: ItemCell {
-        var configCellGotCalled = false
+        var cactchedItem: ToDoItem?
         
-        func configcell(with item: ToDoItem) {
-            configCellGotCalled = true
+        override func configCell(with item: ToDoItem) {
+            cactchedItem = item
         }
     }
     

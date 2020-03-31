@@ -19,7 +19,16 @@ extension ItemListDataProvider: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        let section = indexPath.section
+        var newItem: ToDoItem!
+        if let getItem = itemManager?.item(at: indexPath.row), section == 0 {
+            newItem = getItem
+        }
+        if let doneItem = itemManager?.doneItem(at: indexPath.row), section == 1 {
+            newItem = doneItem
+        }
+        cell.configCell(with: newItem)
         return cell
     }
     
